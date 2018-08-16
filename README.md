@@ -1,5 +1,5 @@
 # terraform-azurerm-app-service-key-vault-access-policy
-Terraform module designed to add key vault access poicy from list of Object Ids
+Terraform module designed to add key vault access policy from list of Object Ids
 
 ## Usage
 
