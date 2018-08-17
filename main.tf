@@ -17,7 +17,7 @@ resource "azurerm_key_vault_access_policy" "default" {
   tenant_id = "${data.azurerm_client_config.default.tenant_id}"
   object_id = "${lookup(var.policy_object_list_map[count.index],"object_id")}"
 
-  key_permissions         = "${join(",",lookup(var.policy_object_list_map[count.index],"key_permissions"))}"
-  secret_permissions      = "${join(",",lookup(var.policy_object_list_map[count.index],"secret_permissions"))}"
-  certificate_permissions = "${join(",",lookup(var.policy_object_list_map[count.index],"certificate_permissions"))}"
+  key_permissions         = "${split(",",lookup(var.policy_object_list_map[count.index],"key_permissions"))}"
+  secret_permissions      = "${split(",",lookup(var.policy_object_list_map[count.index],"secret_permissions"))}"
+  certificate_permissions = "${split(",",lookup(var.policy_object_list_map[count.index],"certificate_permissions"))}"
 }
