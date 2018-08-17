@@ -34,10 +34,7 @@ This will create Key Vault access policies for the number of object ids provided
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
-| access_policy_count | Count  | number | - | yes |
-| object_id | string of object_id  | string  | - | yes |
-| key_permissions | List of key permissions, must be one or more from the following: backup, create, decrypt, delete, encrypt, get, import, list, purge, recover, restore, sign, unwrapKey, update, verify and wrapKey. | list | `["get","list",]` | yes |
-| secret_permissions | List of secret permissions, must be one or more from the following: backup, delete, get, list, purge, recover, restore and set. | list | `["get","list",]` | yes |
-| certificate_permissions | List of certificate permissions, must be one or more from the following: create, delete, deleteissuers, get, getissuers, import, list, listissuers, managecontacts, manageissuers, purge, recover, setissuers and update. | list | `["get","list",]` | yes |
+| access_policy_count | Count, must equal the length of `policy_object_list_map` | number | - | yes |
+| policy_object_list_map | list of maps:<br> - `object_id`,`key_permissions`,`secret_permissions`,`certificate_permissions`  | list <map>  | - | yes |
 | key_vault_name | Key Vault name| string | - | yes |
 | key_vault_resource_group_name | Key Vault Resource Group name, e.g. `testing-service-rg` | string | - | yes |
