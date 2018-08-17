@@ -1,7 +1,7 @@
 variable "access_policy_count" {}
 
 variable "policy_object_list_map" {
-  type = "string"
+  type = "list"
 }
 
 # variable "key_permissions" {
