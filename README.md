@@ -34,8 +34,8 @@ This will create Key Vault access policies for the number of object ids provided
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
-| access_policy_count | access_policy_count, Count must be of equal length to `object_id` | number | - | yes |
-| object_id | List of object_ids, the list length number must match the `access_policy_count`  | list  | - | yes |
+| access_policy_count | Count  | number | - | yes |
+| object_id | string of object_id  | string  | - | yes |
 | key_permissions | List of key permissions, must be one or more from the following: backup, create, decrypt, delete, encrypt, get, import, list, purge, recover, restore, sign, unwrapKey, update, verify and wrapKey. | list | `["get","list",]` | yes |
 | secret_permissions | List of secret permissions, must be one or more from the following: backup, delete, get, list, purge, recover, restore and set. | list | `["get","list",]` | yes |
 | certificate_permissions | List of certificate permissions, must be one or more from the following: create, delete, deleteissuers, get, getissuers, import, list, listissuers, managecontacts, manageissuers, purge, recover, setissuers and update. | list | `["get","list",]` | yes |

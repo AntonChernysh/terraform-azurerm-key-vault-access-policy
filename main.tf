@@ -1,3 +1,5 @@
+data "azurerm_client_config" "default" {}
+
 data "azurerm_resource_group" "default" {
   name = "${var.key_vault_resource_group_name}"
 }
@@ -12,12 +14,10 @@ resource "azurerm_key_vault_access_policy" "default" {
   vault_name          = "${data.azurerm_key_vault.default.name}"
   resource_group_name = "${data.azurerm_key_vault.default.resource_group_name}"
 
-  tenant_id      = "${lookup(local.identities[count.index],"tenant_id")}"
-  object_id      = "${lookup(local.identities[count.index],"principal_id")}"
-  #application_id = "${lookup(local.identities[count.index],"principal_id")}"
+  tenant_id = "${data.azurerm_client_config.default.tenant_id}"
+  object_id = "${var.object_id}"
 
-  key_permissions = "${var.key_permissions}"
-
+  key_permissions         = "${var.key_permissions}"
   secret_permissions      = "${var.secret_permissions}"
   certificate_permissions = "${var.certificate_permissions}"
 }
