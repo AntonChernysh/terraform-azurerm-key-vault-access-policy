@@ -35,6 +35,6 @@ This will create Key Vault access policies for the number of object ids provided
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
 | access_policy_count | Count, must equal the length of `policy_object_list_map` | number | - | yes |
-| policy_object_list_map | list of maps:<br> - `object_id`,`key_permissions`,`secret_permissions`,`certificate_permissions`  | list <map>  | - | yes |
+| policy_object_list_map | list of maps:<br> - `object_id`,`key_permissions`,`secret_permissions`,`certificate_permissions`  permissions csv strings | list <map>  | - | yes |
 | key_vault_name | Key Vault name| string | - | yes |
 | key_vault_resource_group_name | Key Vault Resource Group name, e.g. `testing-service-rg` | string | - | yes |
